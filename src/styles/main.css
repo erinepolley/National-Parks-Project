@@ -1,3 +1,11 @@
 body {
     background-color: azure;
 }
+
+.visited {
+    border: 1px solid seagreen;
+}
+
+.not-visited {
+    border: 1px dashed palevioletred;
+}
