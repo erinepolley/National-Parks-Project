@@ -2,10 +2,12 @@ body {
     background-color: azure;
 }
 
-.visited {
+#visited {
     border: 1px solid seagreen;
+    margin: 10px;
 }
 
-.not-visited {
+#not-visited {
     border: 1px dashed palevioletred;
+    margin: 10px
 }

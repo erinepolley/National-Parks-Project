@@ -7,15 +7,13 @@ console.log("You will get through this!")
 
 
 
-
 const parkResultsToHtml = (parkObj) => {
-    let parkInHtml = `
-<article>
+  return  `
+<article id=${className}>
     <h3>${parkObj.name}</h3>
     <p>${parkObj.state}</p>
 </article>
 `
-    return parkInHtml;
 
 }
 
@@ -29,10 +27,6 @@ const parksDisplay = (parksResultsArray) => {
         parkListToHtml += parkResultsToHtml(park)
         divThatListWillGoIn.innerHTML = parkListToHtml
         addClassNameToElement(park);
-
-
-
-
     })
 
 }
@@ -44,12 +38,13 @@ const fetchNationalParksData = () => {
         .then(parsedParks => parksDisplay(parsedParks))
 }
 
+
+let className = ""
 const addClassNameToElement = (parkObj) => {
-    let articleOnDom = document.querySelector("article")
     if (parkObj.visited) {
-        articleOnDom.classList.add("visited")
+        className = "visited"
     } else {
-        articleOnDom.classList.add("not-visited")
+        className = "not-visited"
     }
 }
 
