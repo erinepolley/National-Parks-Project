@@ -12,6 +12,7 @@ const parkResultsToHtml = (parkObj) => {
 <article id=${className}>
     <h3>${parkObj.name}</h3>
     <p>${parkObj.state}</p>
+    <ul></ul>
 </article>
 `
 
@@ -21,21 +22,15 @@ const parkResultsToHtml = (parkObj) => {
 let parkListToHtml = "";
 const parksDisplay = (parksResultsArray) => {
     const divThatListWillGoIn = document.querySelector("#parks-list");
-    console.log(divThatListWillGoIn)
+  //  console.log(divThatListWillGoIn)
     parksResultsArray.forEach(park => {
-        console.log(park)
+     //   console.log(park)
         parkListToHtml += parkResultsToHtml(park)
         divThatListWillGoIn.innerHTML = parkListToHtml
         addClassNameToElement(park);
+        fetchWeatherData(`${park.latitude}, ${park.longitude}`)
+        console.log(park.latitude, park.longitude)
     })
-
-}
-
-
-const fetchNationalParksData = () => {
-    fetch("http://localhost:8088/parks")
-        .then(response => response.json())
-        .then(parsedParks => parksDisplay(parsedParks))
 }
 
 
@@ -53,11 +48,8 @@ fetchNationalParksData();
 
 
 
-        // const parkDisplay = (parkSearchResultsArray) => {
-        //     let parksHtml = ""
-        //     const parkResultsOnDom = document.querySelector(".container__results")
-        //     parkSearchResultsArray.forEach(park => {
-        //       parksHtml += parkResultsToHtml(park)
-        //       parkResultsOnDom.innerHTML = parksHtml;
-        //       // attachEventListenerToSaveButton(park)
-        //     });
+
+//fetch data from weather API using lat and long from parks data
+//Needed: Currently: locationObj.currently.summary, Today: locationObj.hourly.summary, and Week: locationObj.daily.summary. <li> in <ul>
+//iterate over results, add the stuff I want to a variable.
+//take the stuff in the variable and put it in an empty container created in parkResultsToHtml.
