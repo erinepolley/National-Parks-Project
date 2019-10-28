@@ -1,13 +1,21 @@
 body {
     background-color: azure;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(65, 105, 102)
+}
+
+h1 {
+    color: rgb(65, 105, 102)
 }
 
 #visited {
-    border: 1px solid seagreen;
+    border: 3px solid rgb(153, 204, 175);
     margin: 10px;
+    padding: 10px
 }
 
 #not-visited {
-    border: 1px dashed palevioletred;
-    margin: 10px
+    border: 3px dashed rgb(219, 125, 157);
+    margin: 10px;
+    padding: 10px
 }
