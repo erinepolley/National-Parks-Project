@@ -1,30 +1,17 @@
 # National Parks
 
-## Setup
+This project offered practice using external APIs. Instructions are below. 
+
+## Instructions for Viewing the Project
 
 1. Clone down this repo.
-1. `cd` into the repo.
-1. Change the remote origin of this repo with the following steps:
-    1. Run the following command in national parks directory: `rm -rf .git` 
-    1. Go to your Github account and create a new repo.
-    1. In your national parks directory, do the following:
-        1. `git init`
-        1. `git add .`
-        1. `git commit -m "National parks starter code"`
-        1. `git remote add origin [URL of the repo you just created on Github]`
-        1. `git push -u origin master`
+2. `cd` into the repo.
+    a. `cd` into the `api` directory
+    b. Run `json-server -w database.json -p 8088`
 
-        You are now ready to checkout a branch and start coding.
-
-1. You will be using json-server to have a locally running API that serves your data. To run json-server from command line: 
-    1. `cd` into the `api` directory
-    1. Run `json-server -w database.json -p 8088`
-
-    Go to `localhost:8088/parks` to see your data.
-
-1. You will also need to use http-server:
-    1. `cd` into the `src` directory
-    1. Run `http-server`
+3. You will also need to use http-server:
+    a. `cd` into the `src` directory
+    b. Run `http-server`
 
 ## A List of National Parks
 
